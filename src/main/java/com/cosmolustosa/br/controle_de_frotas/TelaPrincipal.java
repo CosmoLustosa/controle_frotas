@@ -5,6 +5,8 @@
 package com.cosmolustosa.br.controle_de_frotas;
 
 import java.awt.Font;
+import com.cosmolustosa.br.db.ConectaDB;
+import java.awt.Dialog;
 
 /**
  *
@@ -18,7 +20,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal() {
         initComponents();
         this.setFont(Font.getFont("Roboto"));
-        this.setLocation(320, 100);
+        this.setLocationRelativeTo(null); //coloca a janela no centro da tela
         this.menuCadastro.setMnemonic('o');
         this.menuRelatorio.setMnemonic('r');
         //this.setExtendedState(MAXIMIZED_BOTH);
@@ -52,6 +54,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItemFilial = new javax.swing.JMenuItem();
         jMenuItemCombustivel = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
+        menuConfiguracoes = new javax.swing.JMenu();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -167,22 +170,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuRelatorio.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jMenuBar1.add(menuRelatorio);
 
+        menuConfiguracoes.setMnemonic('f');
+        menuConfiguracoes.setText("Configurações");
+        menuConfiguracoes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jMenuBar1.add(menuConfiguracoes);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(329, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addContainerGap(317, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         pack();
@@ -196,6 +202,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
        PessoaForm pf =  new PessoaForm();
        pf.setVisible(true);
+       pf.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_menuPessoaActionPerformed
 
     private void jMenuItemFilialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFilialActionPerformed
@@ -204,10 +211,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void bt_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastrarActionPerformed
         // TODO add your handling code here:
+        ConectaDB.abreConexao();
     }//GEN-LAST:event_bt_cadastrarActionPerformed
 
     private void bt_veiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_veiculoActionPerformed
-        // TODO add your handling code here:
+       VeiculoForms vf = new VeiculoForms(this, true);
+       vf.setLocationRelativeTo(null);//centraliza a janela
+       vf.setVisible(true);
     }//GEN-LAST:event_bt_veiculoActionPerformed
 
     /**
@@ -263,6 +273,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemVeiculo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu menuCadastro;
+    private javax.swing.JMenu menuConfiguracoes;
     private javax.swing.JMenuItem menuPessoa;
     private javax.swing.JMenu menuRelatorio;
     // End of variables declaration//GEN-END:variables

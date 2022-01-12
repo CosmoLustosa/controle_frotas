@@ -113,6 +113,15 @@
             </Property>
           </Properties>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="menuConfiguracoes">
+          <Properties>
+            <Property name="mnemonic" type="int" value="102"/>
+            <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xf5;es"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Roboto" size="12" style="0"/>
+            </Property>
+          </Properties>
+        </Menu>
       </SubComponents>
     </Menu>
   </NonVisualComponents>
@@ -144,18 +153,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" pref="910" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="35" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" pref="1080" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="329" max="32767" attributes="0"/>
-              <Component id="jPanel1" min="-2" pref="99" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace pref="317" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="91" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
